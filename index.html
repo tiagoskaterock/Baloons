@@ -6,6 +6,15 @@
 		<title>Estourando balões</title>
 
 		<script language='Javascript'>
+			function startGame(){
+				// levels are 1, 2, 3 -> easy, medium, hard 
+				var gameLevel = document.getElementById("game_level").value;
+				alert(gameLevel);
+
+				// change page 
+				window.location.href = "jogo.html?" + gameLevel;
+				alert(gameLevel);
+			}
 			
 		</script>
 	</head>
@@ -14,10 +23,14 @@
 		<div>
 			<p>
 				<b>Level: </b>
-				<option value="1">Easy</option>
-				<option value="2">Medium</option>
-				<option value="3">hard</option>
+				<select id="game_level">
+					<option value="1">Easy</option>
+					<option value="2">Medium</option>
+					<option value="3">hard</option>
+				</select>
 			</p>
+			<br>
+			<img src="imagens/iniciar.png" onclick="startGame()">
 		</div>
 
 	</body>
