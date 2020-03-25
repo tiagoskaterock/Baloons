@@ -9,33 +9,33 @@
 	</head>
 
 	<body onload="startGame()">
-		<div style="float:left; width: auto; height: 500px; background: #FFF; border: solid 1px #A2A2A2">
+		<div style="float:left; width: auto; height: 500px; background: #FFF; border: solid 1px #A2A2A2; margin-right: 5px">
 			<!-- blue big baloon -->
-			<table border="1">
+			<table border="0">
 				<tr>
 					<td>
 						<img src="imagens/balao_azul_grande.png">
 					</td>
 					<td>
-						10
+						<span id="full_balloons" style="font-size: 40px"></span>
 					</td>
 				</tr>
 			</table>
 
 			<!-- broken out big blue baloon -->
-			<table border="1">
+			<table border="0">
 				<tr>
 					<td>
 						<img src="imagens/balao_azul_grande_estourado.png">
 					</td>
 					<td>
-						10
+						<span id="popped_balloons" style="font-size: 40px"></span>
 					</td>
 				</tr>
 			</table>
 
 			<!-- chronometer-->
-			<table border="1" style="width: 140px; height: 132px">
+			<table border="0" style="width: 140px; height: 132px">
 				<tr>
 					<td style="background: url('imagens/cronometro.png'); text-align: center;">
 						<span id="chronometer" style="color: red; font-size: 30px;"></span>

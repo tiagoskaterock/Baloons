@@ -26,11 +26,19 @@ function startGame(){
 	// inserting seconds in span
 	document.getElementById("chronometer").innerHTML = seconds;
 
-	// ballons quantity
+	// full ballons quantity
 	var balloonQtd = 80;	
+
+	// popped balloons quantity
+	var popped_balloons_qnt = 0;
 
 	createBalloons(balloonQtd);
 
+	// print qnt of full balloons
+	document.getElementById("full_balloons").innerHTML = balloonQtd;
+
+	// print qnt of popped balloons
+	document.getElementById("popped_balloons").innerHTML = popped_balloons_qnt;
 }
 
 function createBalloons(qtd){
