@@ -2,7 +2,7 @@
 var timerID = null;
 
 function startGame(){
-	alert("Game started");
+	// alert("Game started");
 	var url = window.location.search;
 
 	// alert(url);
@@ -17,13 +17,14 @@ function startGame(){
 	var seconds = 0;
 
 	if (gameLevel == 1) {
-		seconds = 120;
+		seconds = 121;
 	}
 	else if (gameLevel == 2) {
-		seconds = 60;
+		seconds = 61;
 	}
 	else if (gameLevel == 3) {
-		seconds = 30;
+		// seconds = 31;
+		seconds = 6; // only for tests
 	}
 
 	// inserting seconds in span
@@ -50,8 +51,21 @@ function countTime(sec){
 	console.log("countTime()");
 	console.log("sec: " + sec);
 	sec--;
+
+	if (sec < 0) {
+		console.log("inside the if");
+		clearTimeout(timerID);
+		gameOver();
+		return false;
+	}
+
 	document.getElementById("chronometer").innerHTML = sec;
 	timerID = setTimeout("countTime("+sec+")", 1000);
+	console.log("timerID: " + timerID);
+}
+
+function gameOver(){
+	alert("Game over");
 }
 
 function createBalloons(qtd){
