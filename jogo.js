@@ -1,5 +1,8 @@
+// variable that stores the timeout() function
+var timerID = null;
+
 function startGame(){
-	// alert("Game started");
+	alert("Game started");
 	var url = window.location.search;
 
 	// alert(url);
@@ -39,6 +42,16 @@ function startGame(){
 
 	// print qnt of popped balloons
 	document.getElementById("popped_balloons").innerHTML = popped_balloons_qnt;
+
+	countTime(seconds);
+}
+
+function countTime(sec){
+	console.log("countTime()");
+	console.log("sec: " + sec);
+	sec--;
+	document.getElementById("chronometer").innerHTML = sec;
+	timerID = setTimeout("countTime("+sec+")", 1000);
 }
 
 function createBalloons(qtd){
