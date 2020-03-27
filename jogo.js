@@ -91,6 +91,9 @@ function createBalloons(qtd){
 function xplode(elemento){
 	// alert("xplodin balloon");
 	var balloonID = elemento.id;
+
+	// corrige o bug de poder clicar varias vezes no mesmo balao
+	document.getElementById(balloonID).setAttribute("onclick", "");
 	document.getElementById(elemento.id).src = "imagens/balao_azul_pequeno_estourado.png";
 	// alert(balloonID);
 	pontuacao(-1);
