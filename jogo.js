@@ -1,5 +1,6 @@
 // variable that stores the timeout() function
 var timerID = null;
+var gameRodando = true;
 
 function startGame(){
 	// alert("Game started");
@@ -23,7 +24,7 @@ function startGame(){
 		seconds = 60;
 	}
 	else if (gameLevel == 3) {
-		seconds = 30;
+		seconds = 3;
 		// seconds = 5; // only for tests
 	}
 
@@ -66,6 +67,7 @@ function countTime(sec){
 
 function gameOver(){
 	alert("Game over");
+	gameRodando = false;
 }
 
 function createBalloons(qtd){
@@ -79,9 +81,12 @@ function createBalloons(qtd){
 		// alert(balloon.id);
 
 		balloon.onclick = function(){
-			// alert("it is in");
-			// alert(balloon.id);
-			xplode(this);
+			if (gameRodando) {
+				// alert("it is in");
+				// alert(balloon.id);
+				xplode(this);
+			}
+			
 		}
 
 		document.getElementById("cenario").appendChild(balloon);
@@ -124,4 +129,6 @@ function situacaoJogo(cheios){
 
 function pararJogo(){
 	clearTimeout(timerID);
+	gameRodando = false;
 }
+
