@@ -31,7 +31,7 @@ function startGame(){
 	document.getElementById("chronometer").innerHTML = seconds;
 
 	// full ballons quantity
-	var balloonQtd = 27;	
+	var balloonQtd = 63;	
 
 	// popped balloons quantity
 	var popped_balloons_qnt = 0;
@@ -108,4 +108,17 @@ function pontuacao(acao){
 	document.getElementById("full_balloons").innerHTML = cheios;
 	document.getElementById("popped_balloons").innerHTML = furados;
 
+	situacaoJogo(cheios);
+
+}
+
+function situacaoJogo(cheios){
+	if (cheios < 1) {
+		alert("victory");
+		pararJogo();
+	}
+}
+
+function pararJogo(){
+	clearTimeout(timerID);
 }
