@@ -24,7 +24,7 @@ function startGame(){
 		seconds = 60;
 	}
 	else if (gameLevel == 3) {
-		seconds = 3;
+		seconds = 30;
 		// seconds = 5; // only for tests
 	}
 
