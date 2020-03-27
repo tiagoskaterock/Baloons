@@ -17,21 +17,21 @@ function startGame(){
 	var seconds = 0;
 
 	if (gameLevel == 1) {
-		seconds = 121;
+		seconds = 120;
 	}
 	else if (gameLevel == 2) {
-		seconds = 61;
+		seconds = 60;
 	}
 	else if (gameLevel == 3) {
-		// seconds = 31;
-		seconds = 6; // only for tests
+		seconds = 30;
+		// seconds = 5; // only for tests
 	}
 
 	// inserting seconds in span
 	document.getElementById("chronometer").innerHTML = seconds;
 
 	// full ballons quantity
-	var balloonQtd = 80;	
+	var balloonQtd = 27;	
 
 	// popped balloons quantity
 	var popped_balloons_qnt = 0;
@@ -44,7 +44,7 @@ function startGame(){
 	// print qnt of popped balloons
 	document.getElementById("popped_balloons").innerHTML = popped_balloons_qnt;
 
-	countTime(seconds);
+	countTime(seconds + 1);
 }
 
 function countTime(sec){
@@ -74,7 +74,23 @@ function createBalloons(qtd){
 		// alert("inside the for loop");
 		var balloon = document.createElement("img");
 		balloon.src = "imagens/balao_azul_pequeno.png";
-		balloon.style.margin = "10px";
+		balloon.style.margin = "15px";
+		balloon.id = 'b' + i;
+		// alert(balloon.id);
+
+		balloon.onclick = function(){
+			// alert("it is in");
+			// alert(balloon.id);
+			xplode(this);
+		}
+
 		document.getElementById("cenario").appendChild(balloon);
 	}
+}
+
+function xplode(elemento){
+	// alert("xplodin balloon");
+	var balloonID = elemento.id;
+	document.getElementById(elemento.id).src = "imagens/balao_azul_pequeno_estourado.png";
+	// alert(balloonID);
 }
