@@ -93,4 +93,19 @@ function xplode(elemento){
 	var balloonID = elemento.id;
 	document.getElementById(elemento.id).src = "imagens/balao_azul_pequeno_estourado.png";
 	// alert(balloonID);
+	pontuacao(-1);
+}
+
+function pontuacao(acao){
+	var cheios = document.getElementById("full_balloons").innerHTML;
+	var furados = document.getElementById("popped_balloons").innerHTML;
+	cheios = parseInt(cheios);
+	furados = parseInt(furados);
+	// alert(cheios);
+	// alert(furados);
+	cheios = cheios + acao;
+	furados = furados - acao;
+	document.getElementById("full_balloons").innerHTML = cheios;
+	document.getElementById("popped_balloons").innerHTML = furados;
+
 }
