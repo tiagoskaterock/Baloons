@@ -81,6 +81,7 @@ function createBalloons(qtd){
 		// alert(balloon.id);
 
 		balloon.onclick = function(){
+			tocaMusica();
 			if (gameRodando) {
 				// alert("it is in");
 				// alert(balloon.id);
@@ -100,13 +101,15 @@ function xplode(elemento){
 	document.getElementById(balloonID).setAttribute("onclick", "");
 	document.getElementById(elemento.id).src = "imagens/balao_azul_pequeno_estourado.png";
 
-	// tentando fazer o som da explosao do balao
-	// document.getElementById('balloon_explode_sound').play();
-
+	// som da explosao do balao
 	document.getElementById('balloon_explode_sound').play();
 
 	// alert(balloonID);
 	pontuacao(-1);
+}
+
+function tocaMusica(){
+	document.getElementById('music_sound').play();
 }
 
 function pontuacao(acao){
