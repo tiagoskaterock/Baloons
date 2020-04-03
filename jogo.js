@@ -85,8 +85,7 @@ function createBalloons(qtd){
 				// alert("it is in");
 				// alert(balloon.id);
 				xplode(this);
-			}
-			
+			}			
 		}
 
 		document.getElementById("cenario").appendChild(balloon);
@@ -100,6 +99,12 @@ function xplode(elemento){
 	// corrige o bug de poder clicar varias vezes no mesmo balao
 	document.getElementById(balloonID).setAttribute("onclick", "");
 	document.getElementById(elemento.id).src = "imagens/balao_azul_pequeno_estourado.png";
+
+	// tentando fazer o som da explosao do balao
+	// document.getElementById('balloon_explode_sound').play();
+
+	document.getElementById('balloon_explode_sound').play();
+
 	// alert(balloonID);
 	pontuacao(-1);
 }
